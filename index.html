@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaR6imH1p2r1QZt+8k4pL5Q6z9l+6e5w5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Hello World</h1>
+        <button id="alertButton" class="btn btn-primary mt-3">Click Me</button>
+    </div>
+    <script>
+        document.getElementById('alertButton').addEventListener('click', function() {
+            alert('Hello, World!');
+        });
+
+        // Error handling example for fetch
+        async function fetchData(url) {
+            try {
+                let response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                let data = await response.text();
+                console.log(data);
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        // Example usage of fetchData
+        // fetchData('assets/sample.csv');
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-9ndCyUaR6imH1p2r1QZt+8k4pL5Q6z9l+6e5w5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5r5" crossorigin="anonymous"></script>
+</body>
+</html>
